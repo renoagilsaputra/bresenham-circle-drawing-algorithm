@@ -9,7 +9,7 @@ def init():
     glPointSize(5)
 
 
-def plot(x, y):
+def set_pixel(x, y):
     glBegin(GL_POINTS)
     glVertex2f(x, y)
     glEnd()
@@ -29,7 +29,7 @@ def bresenham_circle_drawing(r):
     # decision parameter
     d = 3 - 2 * r
 
-    plot(x + x_position, y + y_position)
+    set_pixel(x + x_position, y + y_position)
 
     while y > x:
 
@@ -44,30 +44,30 @@ def bresenham_circle_drawing(r):
         # Untuk pixel (x, y)
 
         # Quadrant 1
-        plot(x + x_position, y + y_position)
+        set_pixel(x + x_position, y + y_position)
 
         # Quadrant 2
-        plot(x + x_position, -y + y_position)
+        set_pixel(x + x_position, -y + y_position)
 
         # Quadrant 3
-        plot(-x + x_position, -y + y_position)
+        set_pixel(-x + x_position, -y + y_position)
 
         # Quadrant 4
-        plot(-x + x_position, y + y_position)
+        set_pixel(-x + x_position, y + y_position)
 
         # Untuk pixel (y, x)
 
         # Quadrant 1
-        plot(y + x_position, x + y_position)
+        set_pixel(y + x_position, x + y_position)
 
         # Quadrant 2
-        plot(-y + x_position, x + y_position)
+        set_pixel(-y + x_position, x + y_position)
 
         # Quadrant 3
-        plot(-y + x_position, -x + y_position)
+        set_pixel(-y + x_position, -x + y_position)
 
         # Quadrant 4
-        plot(y + x_position, -x + y_position)
+        set_pixel(y + x_position, -x + y_position)
 
 
 def plotpoints():
